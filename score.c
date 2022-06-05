@@ -23,7 +23,7 @@ void highScore(int diff, char* playerName, int playerScore){
 	if (playerScore < curScore){
 		rewind(score);
 		fputs(playerName, score);
-		for(i=strlen(playerName);i<20;i++){
+		for(i=strlen(playerName);i<20;i++){ // We set the player's name to a length of 20 by completing it with "-", it simplifies the score reading
 			fputc('-',score);
 		}
 		if (playerScore<1000){
@@ -51,7 +51,7 @@ void printScore(FILE* fichier, int score){
 	for(i=0;i<20;i++){
 		car=fgetc(fichier);
 		if (car!='-'){
-			name[i]=car;
+			name[i]=car; // We take the player's name by removing the "-"
 		}
 	}
 	printf("\n**********RECORD**********\n");
